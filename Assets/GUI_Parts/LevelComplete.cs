@@ -8,6 +8,7 @@ public class LevelComplete : MonoBehaviour
 {
     public GameObject pauseMenu;
     public bool itIsStillActiving;
+    public LevelU level;
 
     private void Update() {
 
@@ -20,7 +21,7 @@ public class LevelComplete : MonoBehaviour
     }
 
     public void Setup(){
-        PlayerPrefs.SetFloat("Level2",1);
+        level.unlockLevel();
         Time.timeScale = 0f;
         gameObject.SetActive(true);
     }

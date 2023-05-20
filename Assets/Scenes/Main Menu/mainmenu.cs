@@ -58,6 +58,14 @@ public class mainmenu : MonoBehaviour
         }
     }
 
+    public void playLevel3(){
+        if(checkUnlocked("Level3")){
+            SceneManager.LoadScene("Level_3");
+        }else{
+            StartCoroutine(alert());
+        }
+    }
+
     IEnumerator alert(){
         AlertText.SetActive(true);
         yield return new WaitForSeconds(1f);
